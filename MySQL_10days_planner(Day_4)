@@ -1,0 +1,16 @@
+Day 4
+
+
+1965. Employees With Missing Information
+select e.employee_id from employees e left join salaries s on e.employee_id=s.employee_id where s.employee_id is null
+union all
+select s.employee_id from employees e right join salaries s on e.employee_id=s.employee_id where e.employee_id is null order by employee_id;
+
+1795. Rearrange Products Table
+not able to solve
+
+608. Tree Node
+not able to solve
+
+176. Second Highest Salary
+select max(salary) as SecondHighestSalary from employee where salary<(select max(salary) from employee);
