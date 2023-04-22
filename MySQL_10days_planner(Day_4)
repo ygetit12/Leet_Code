@@ -7,10 +7,14 @@ union all
 select s.employee_id from employees e right join salaries s on e.employee_id=s.employee_id where e.employee_id is null order by employee_id;
 
 1795. Rearrange Products Table
-not able to solve
+select product_id,'store1' as store,store1 as price from products where store1 is not null
+union
+select product_id,'store2' as store,store2 as price from products where store2 is not null
+union
+select product_id,'store3' as store,store3 as price from products where store3 is not null;
 
 608. Tree Node
-not able to solve
+SELECT ID,CASE WHEN p_id is null THEN "Root" WHEN id in (select distinct p_id from tree) Then "Inner" ELSE "Leaf" END as type FROM tree;
 
 176. Second Highest Salary
 select max(salary) as SecondHighestSalary from employee where salary<(select max(salary) from employee);
