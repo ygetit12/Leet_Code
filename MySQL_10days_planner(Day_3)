@@ -1,0 +1,10 @@
+Day 3
+
+1667. Fix Names in a Table
+select user_id,concat(upper(substring(name,1,1)),lower(substring(name,2,(LENGTH(name)-1)))) as name from Users order by user_id;
+
+1484. Group Sold Products By The Date
+(not able to solve)
+
+1527. Patients With a Condition
+select * from patients where conditions like '% DIAB1%' or conditions like 'DIAB1%';
