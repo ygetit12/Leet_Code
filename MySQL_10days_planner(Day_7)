@@ -1,7 +1,9 @@
 1141. User Activity for the Past 30 Days
-
+select distinct(activity_date) as day,count(distinct(user_id)) as active_users 
+from activity where activity_date between Date_add('2019-07-27',Interval-29 day) and '2019-07-27' group by activity_date;
 
 1693. Daily Leads and Partners
-
+select date_id,make_name,count(distinct(lead_id)) as unique_leads, count(distinct(partner_id)) as unique_partners from DailySales group by date_id , make_name;
 
 1729. Find Followers Count
+select distinct(user_id),count(distinct(follower_id)) as followers_count from followers group by user_id order by user_id;
