@@ -1,2 +1,34 @@
 Day 1
 
+1523. Count Odd Numbers in an Interval Range:
+class Solution(object):
+    def countOdds(self, low, high):
+        return (high+1)//2 - (low//2)
+
+
+1491. Average Salary Excluding the Minimum and Maximum Salary
+class Solution(object):
+    def average(self, salary):
+        """
+        :type salary: List[int]
+        :rtype: float
+        """
+        # salary.remove(max(salary))
+        # salary.remove(min(salary))
+        # return sum(salary)/len(salary)
+
+        # # smax=max(salary)
+        # # smin=min(salary)
+        # # ssum=0
+        # # count=0
+        # # for s in salary:
+        # #     if s!=smin and s!=smax:
+        # #         ssum+=s
+        # #         count+=1
+        # # return (ssum/count) 
+        
+        salary.sort()
+        new_salary=[]
+        for i in range(1,len(salary)-1):
+            new_salary.append(salary[i])
+        return sum(new_salary)/len(new_salary)    
